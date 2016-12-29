@@ -23,9 +23,33 @@
 // console.log(result)
 
 
+// deck_name_ch = ["法术德", "中速猎", "奥秘猎", "冰法", "宇宙法", "节奏法", "神恩骑", "死鱼骑", "龙牧", "控制牧", "青玉贼", "奇迹贼", "亡语贼", "打脸萨", "中速萨", "动物园", "手牌术", "防战", "龙战", "海盗战"]
+// deck_name_eg = ["Jade Druid", "Midrange Hunter", "Secret Hunter", "Freeze Mage", "Reno Mage", "Tempo Mage", "Aggro Paladin", "Murloc Paladin", "Dragon Priest", "Reno Priest", "Jade Rogue", "Miracle Rogue", "N'Zoth Rogue", "Aggro Shaman", "Midrange Shaman", "Discard Lock", "Reno Warlock", "Control Warrior", "Dragon Warrior", "Pirate Warrior"]
 
-deck_name_ch = ["法术德","中速猎","奥秘猎","冰法","宇宙法","节奏法","神恩骑","死鱼骑","龙牧","控制牧","青玉贼","奇迹贼","亡语贼","打脸萨","中速萨","动物园","手牌术","防战","龙战","海盗战"]
-deck_name_eg = ["Jade Druid","Midrange Hunter","Secret Hunter","Freeze Mage","Reno Mage","Tempo Mage","Aggro Paladin","Murloc Paladin","Dragon Priest","Reno Priest","Jade Rogue","Miracle Rogue","N'Zoth Rogue","Aggro Shaman","Midrange Shaman","Discard Lock","Reno Warlock","Control Warrior","Dragon Warrior","Pirate Warrior"]
+
+//这里仅列出了需要记入环境卡组的21套卡组，可能会根据需要调整
+deck_name = {
+    "Beast Druid"       : "野兽德",
+    "Jade Druid"        : "青玉德",
+    "Maly Druid"        : "蓝龙德",
+    "Midrange Hunter"   : "中速猎",
+    "Secret Hunter"     : "奥秘猎",
+    "Reno Mage"         : "宇宙法",
+    "Tempo Mage"        : "节奏法",
+    "Aggro Paladin"     : "神恩骑",
+    "Murloc Paladin"    : "死鱼骑",
+    "Dragon Priest"     : "龙牧",
+    "Reno Priest"       : "控制牧",
+    "Jade Rogue"        : "青玉贼",
+    "Miracle Rogue"     : "奇迹贼",
+    "Aggro Shaman"      : "打脸萨",
+    "Midrange Shaman"   : "中速萨",
+    "Discard Lock"      : "动物园",
+    "Reno Warlock"      : "手牌术",
+    "Control Warrior"   : "防战",
+    "Dragon Warrior"    : "龙战",
+    "Pirate Warrior"    : "海盗战"
+}
 
 // base_div = $("div").find($("[dir='ltr']"))
 
@@ -55,7 +79,7 @@ rect_class_percent = $(div_1[1]).find($("rect[stroke-width='1'][fill!='none']"))
 
 result_array = {}
 sum = 0
-for(i=0;i<rect_class_percent.length;i++){
+for (i = 0; i < rect_class_percent.length; i++) {
     width = $(rect_class_percent[i]).attr("width")
     result_array[$(text_deck_names[i]).text()] = width
 
@@ -63,9 +87,9 @@ for(i=0;i<rect_class_percent.length;i++){
 }
 console.log(sum)
 
-sum/=1000
+sum /= 1000
 
-for(i=0;i<rect_class_percent.length;i++){
+for (i = 0; i < rect_class_percent.length; i++) {
     result_array[$(text_deck_names[i]).text()] /= sum
 }
 
@@ -73,16 +97,25 @@ console.log(result_array)
 
 result = ""
 
-for(name in deck_name_eg){
-console.log(name)
-    if(result_array[deck_name_eg[name]]){
-        result+=result_array[deck_name_eg[name]]
-    }else{
-        result+=0
-    }
-    result+=","
+for (name in deck_name) {
+    result += deck_name[name]
+    result += ","
 }
 
-result=result.substr(0,result.length-1)
+result += "\n"
+
+result = result.substr(0, result.length - 1)
+
+for (name in deck_name) {
+    console.log(name)
+    if (result_array[name]) {
+        result += result_array[name]
+    } else {
+        result += 0
+    }
+    result += ","
+}
+
+result = result.substr(0, result.length - 1)
 
 console.log(result)
