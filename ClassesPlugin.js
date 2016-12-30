@@ -97,14 +97,15 @@ console.log(result_array)
 
 result = ""
 
-for (name in deck_name) {
-    result += deck_name[name]
-    result += ","
-}
+//打印表头
+// for (name in deck_name) {
+//     result += deck_name[name]
+//     result += ","
+// }
 
-result += "\n"
+// result = result.substr(0, result.length - 1)
 
-result = result.substr(0, result.length - 1)
+// result += "\n"
 
 for (name in deck_name) {
     console.log(name)
