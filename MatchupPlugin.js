@@ -33,7 +33,7 @@ rows = $("table").find($(".highlightrow"))
 
 result = ""
 //写表头
-result += ","
+result += " ,"
 for (i = 0; i < rows.length; i++) {
     cells = $(rows[i]).find($("td"))
     for (j = 0; j < cells.length; j++) {
