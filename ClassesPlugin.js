@@ -3,26 +3,28 @@
 
 //这里仅列出了需要记入环境卡组的21套卡组，可能会根据需要调整
 deck_name = {
-    "Beast Druid"       : "野兽德",
-    "Jade Druid"        : "青玉德",
-    "Maly Druid"        : "蓝龙德",
-    "Midrange Hunter"   : "中速猎",
-    "Secret Hunter"     : "奥秘猎",
-    "Reno Mage"         : "宇宙法",
-    "Tempo Mage"        : "节奏法",
-    "Aggro Paladin"     : "神恩骑",
-    "Murloc Paladin"    : "死鱼骑",
-    "Dragon Priest"     : "龙牧",
-    "Reno Priest"       : "控制牧",
-    "Jade Rogue"        : "青玉贼",
-    "Miracle Rogue"     : "奇迹贼",
-    "Aggro Shaman"      : "打脸萨",
-    "Midrange Shaman"   : "中速萨",
-    "Discard Lock"      : "动物园",
-    "Reno Warlock"      : "手牌术",
-    "Control Warrior"   : "防战",
-    "Dragon Warrior"    : "龙战",
-    "Pirate Warrior"    : "海盗战"
+    "Aggro Token Druid"     : "快攻德",
+    "Jade Druid"            : "青玉德",
+    "Midrange Druid"        : "中速德",
+    "Ramp Druid"            : "跳费德",
+    "Face Hunter"           : "打脸猎",
+    "Midrange Hunter"       : "中速猎",
+    "Burn Mage"             : "火法",
+    "Elemental Mage"        : "元素法",
+    "Exodia Mage"           : "无限火球法",
+    "Aggro Paladin"         : "神恩骑",
+    "Midrange Paladin"      : "中速骑",
+    "Murloc Paladin"        : "鱼人骑",
+    "Control Priest"        : "控制牧",
+    "Dragon Priest"         : "龙牧",
+    "Highlander Priest"     : "核弹牧",
+    "Miracle Rogue"         : "奇迹贼",
+    "Evolve Shaman"         : "进化萨",
+    "Handlock"              : "手牌术",
+    "Zoo Warlock"           : "动物园术",
+    "Control Warrior"       : "防战",
+    "Pirate Warrior"        : "海盗战",
+    "Quest Taunt Warrior"   : "墙战"
 }
 
 //这里列出5-传说需要统计的11套卡组，可能会根据需要调整
@@ -101,16 +103,16 @@ result_5_0 = ""
 
 // result += "\n"
 
-for (name in deck_name_5_0) {
-    if (result_array[name]) {
-        result_5_0 += result_array[name]
-    } else {
-        result_5_0 += 0
-    }
-    result_5_0 += ","
-}
+// for (name in deck_name_5_0) {
+//     if (result_array[name]) {
+//         result_5_0 += result_array[name]
+//     } else {
+//         result_5_0 += 0
+//     }
+//     result_5_0 += ","
+// }
 
-result_5_0 = result_5_0.substr(0, result_5_0.length - 1)
+// result_5_0 = result_5_0.substr(0, result_5_0.length - 1)
 
-console.log("========================= 5 - legend =========================\n")
-console.log(result_5_0)
+// console.log("========================= 5 - legend =========================\n")
+// console.log(result_5_0)
